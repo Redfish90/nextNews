@@ -1,11 +1,11 @@
-import Link from "next/link";
-import {getAllNews} from "@/lib/news";
 import NewsList from "@/components/news-list";
+import {getAllNews} from "@/lib/news";
 
-export default function NewsPage() {
-    const newsList = getAllNews()
+export default async function NewsPage() {
+    const news = await getAllNews()
+
     return <>
         <h1>The News Page</h1>
-        <NewsList news={newsList}/>
+        <NewsList news={news}/>
     </>
 }
